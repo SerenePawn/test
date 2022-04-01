@@ -1,9 +1,6 @@
-from email import message
-from bottle_websocket import websocket
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-import json
 
 
 app = FastAPI()
