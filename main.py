@@ -24,9 +24,10 @@ async def my_ws(websocket: WebSocket):
             data = data['val']
             await websocket.send_json(
                 {
-                    "val":f"<div>{msg_numerate}. {data}</div>"
+                    "val_num": msg_numerate,
+                    "val_text": data
                 }
             )
             msg_numerate += 1
     except WebSocketDisconnect:
-        print('conn lost')
+        print('conn lost.')
