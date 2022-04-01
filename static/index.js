@@ -1,7 +1,10 @@
-let socket = new WebSocket("ws://localhost:8000/ws/1")
+let socket = new WebSocket("ws://localhost:8000/ws/")
 
 socket.onmessage = function(e) {
-    $(".messages").append(JSON.parse(e.data).val)
+    num = JSON.parse(e.data).val_num
+    txt = JSON.parse(e.data).val_text
+    appendThis = "<div>" + num + ". " + txt + "</div>"
+    $(".messages").append(appendThis)
 };
 
 obj = document.getElementsByClassName('textSend')[0];
